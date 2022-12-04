@@ -1,4 +1,4 @@
-"""A modern synchronous and asynchronous function/method rate limiter.
+"""A modern synchronous and asynchronous function rate limiter.
 
 :copyright: (c) 2022 Tanner B. Corcoran
 :license: MIT, see LICENSE for more details.
@@ -11,7 +11,7 @@ __email__ = "tannerbcorcoran@gmail.com"
 __license__ = "MIT License"
 __copyright__ = "Copyright (c) 2022 Tanner B. Corcoran"
 __version__ = "0.0.1"
-__description__ = "A modern synchronous and asynchronous function/method rate limiter"
+__description__ = "A modern synchronous and asynchronous function rate limiter"
 __url__ = "https://github.com/tanrbobanr/rlim"
 __download_url__ = "https://pypi.org/project/rlim/"
 

@@ -5,8 +5,13 @@
 When working with various APIs, I have found that in some cases the rate limits imposed on the user can be somewhat complex. For example, a single endpoint may have a limit of 3 calls per second *and* 5000 calls per hour (in a few rare instances, I have seen 3 limits for a single endpoint). The two other common rate limiting packages out there ([ratelimit](https://pypi.org/project/ratelimit/) and [ratelimiter](https://pypi.org/project/ratelimiter/)) only allow for a single rate limit to be set (e.g. 300 calls per 30 seconds). Although you could simply decorate a function multiple times, it can very quickly become wasteful in terms of memory and performance. Thus I decided to make a modern memory- and performance-efficient rate limiting module that allows for multiple limits to be imposed on a single rate limiter, as well as combining the best parts of the aforementioned packages.
 
 # How to create and use the RateLimiter
-The creation of a `RateLimiter` instance is rather simple, and there are numerous ways to implement it into your code.
+The creation of a `RateLimiter` instance is rather simple, and there are numerous ways to implement it into your code. When creating a `RateLimiter` instance, you must provide one more more *criteria*. These are the rates/limits that the rate limiter will abide to. The `Rate` object is used for limiting constant-speed function calls (e.g. 2 calls per second), while the `Limit` object is used for limiting quotas (e.g. 3000 calls every 3600 seconds). Using these examples, you could create a `RateLimiter` like this:
+```py
+from rlim import RateLimiter, Rate, Limit
 
+RateLimiter(Rate(2), Limit(3000, 3600))
+```
+When it comes to using this object, there are numerous ways in which to go about it:
 ## Decorators
 A function can be decorated either with a `RateLimiter` instance or with the `placeholder` function decorator. When a function is decorated with either of these, it gains two attributes: `rate_limiter` and `rate_limiter_enabled`. If `rate_limiter` is not `None` and `rate_limiter_enabled` is `True`, the function will be rate limited; otherwise, the function will still run but without any rate limiting. **NOTE**: for all the below examples, the process is identical for async functions / methods.
 

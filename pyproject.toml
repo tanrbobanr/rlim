@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rlim"
+version = "0.0.1"
+authors = [
+    { name = "Tanner B. Corcoran", email = "tannerbcorcoran@gmail.com" },
+]
+description = "A modern synchronous and asynchronous function rate limiter"
+readme = "README.md"
+requires-python = ">=3.5"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/tanrbobanr/rlim"
