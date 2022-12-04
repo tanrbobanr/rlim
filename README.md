@@ -32,7 +32,7 @@ def example():
 ```
 
 ### Decorating with `placeholder`
-The purpose of `placeholder` is so that you can prepare a function to be rate limited (e.g. in a new class instance) and apply the `RateLimiter` instance afterward (e.g. in \_\_init\_\_). Setting the rate limiter can be done with the `set_rate_limiter` helper method, or by simply setting the function's `rate_limiter` attribute to a `RateLimiter` instance.
+The purpose of `placeholder` is so that you can prepare a function to be rate limited (e.g. in a new class instance) and apply the `RateLimiter` instance afterward (e.g. in \_\_init\_\_). Setting the rate limiter can be done with the `set_rate_limiter` helper method, or by simply setting the function's `rate_limiter` attribute (via `.rate_limiter` or `.__dict__["rate_limiter"]`) to a `RateLimiter` instance.
 ```py
 from rlim import RateLimiter, Rate, Limit, placeholder, set_rate_limiter
 

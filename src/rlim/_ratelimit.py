@@ -163,38 +163,38 @@ def placeholder(func):
 def set_rate_limiter(func, rate_limiter: RateLimiter) -> None:
     """Set the function's rate limiter to ``rate_limiter``. Essentially:
     ```
-    func.rate_limiter = rate_limiter
+    func.__dict__["rate_limiter"] = rate_limiter
     ```
     
     """
-    func.rate_limiter = rate_limiter
+    func.__dict__["rate_limiter"] = rate_limiter
 
 
 def set_rate_limiter_enabled(func, rate_limiter_enabled: bool) -> None:
     """Enable or disable a function's rate limiter. Essentially:
     ```
-    func.rate_limiter_enabled = rate_limiter_enabled
+    func.__dict__["rate_limiter_enabled"] = rate_limiter_enabled
     ```
     
     """
-    func.rate_limiter_enabled = rate_limiter_enabled
+    func.__dict__["rate_limiter_enabled"] = rate_limiter_enabled
 
 
 def get_rate_limiter(func) -> RateLimiter:
     """Get a function's rate limiter. Essentially:
     ```
-    return func.rate_limiter
+    return func.__dict__["rate_limiter"]
     ```
     
     """
-    return func.rate_limiter
+    return func.__dict__["rate_limiter"]
 
 
 def get_rate_limiter_enabled(func) -> bool:
     """Get a function's rate limiter enabled status. Essentially:
     ```
-    return func.rate_limiter_enabled
+    return func.__dict__["rate_limiter_enabled"]
     ```
     
     """
-    return func.rate_limiter_enabled
+    return func.__dict__["rate_limiter_enabled"]
