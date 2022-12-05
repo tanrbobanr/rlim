@@ -10,7 +10,7 @@ __author__ = "Tanner B. Corcoran"
 __email__ = "tannerbcorcoran@gmail.com"
 __license__ = "MIT License"
 __copyright__ = "Copyright (c) 2022 Tanner B. Corcoran"
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __description__ = "A modern synchronous and asynchronous function rate limiter"
 __url__ = "https://github.com/tanrbobanr/rlim"
 __download_url__ = "https://pypi.org/project/rlim/"
@@ -25,6 +25,6 @@ from .exceptions import RateLimitExceeded
 from .models import Rate
 from .models import Limit
 
-__all__ = ("RateLimiter", "placeholder", "set_rate_limiter",
-           "set_rate_limiter_enabled", "get_rate_limiter",
+__all__ = ("RateLimiter", "placeholder",
+           "set_rate_limiter", "set_rate_limiter_enabled", "get_rate_limiter",
            "get_rate_limiter_enabled", "RateLimitExceeded", "Rate", "Limit")
